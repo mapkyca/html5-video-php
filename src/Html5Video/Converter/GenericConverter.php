@@ -102,8 +102,7 @@ class GenericConverter {
     $this->_args[] = $dst;
 
     $output = array();
-    $timeLimit = max(0, intval($this->config['timelimit']));
-    
+    $timeLimit = max(0, intval($this->config['timeout']));
     if ($timeLimit > 0)
 	$result = $this->convert($this->config['timeoutbin'] . ' -k 10 --foreground --preserve-status '. $timeLimit . 's ' . $this->config['ffmpeg.bin'], $this->_args, $output);
     else
